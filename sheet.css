@@ -1,0 +1,214 @@
+/* 印刷時の用紙設定 */
+@page {
+    size: A4; /* 用紙サイズ */
+    margin: 0; /* ヘッダー・フッダーを無効化 */
+  }
+  
+  /* 要素の初期化 */
+  * {
+    /* マージン・パディングをリセットした方がデザインしやすい */
+    margin: 0;
+    padding: 0;
+    /* デフォルトのフォント */
+    font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic,
+      sans-serif;
+    font-size: 11pt;
+    font-weight: normal;
+    /* 背景色・背景画像を印刷する（Chromeのみで有効） */
+    -webkit-print-color-adjust: exact;
+  }
+  
+  /* リスト初期化 */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  /* ページレイアウト (section.sheet を１ページとする) */
+  .sheet {
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    page-break-after: always;
+  
+    /* 用紙サイズ A4 */
+    height: 297mm;
+    width: 210mm;
+  
+    /* 余白サイズ */
+    padding-top: 20mm;
+    padding-left: 20mm;
+    padding-right: 20mm;
+  }
+  
+  /* プレビュー用のスタイル */
+  @media screen {
+    body {
+      background: #e0e0e0;
+    }
+    .sheet {
+      background: white; /* 背景を白く */
+      box-shadow: 0 0.5mm 2mm rgba(0, 0, 0, 0.3); /* ドロップシャドウ */
+      margin: 5mm auto;
+    }
+  }
+  
+  /* 汎用クラス */
+  .text-left {
+    text-align: left;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .underline{
+      border-bottom: 1px solid black;
+      padding-bottom: 1px;
+  }
+
+  .number{
+      padding-left:2mm;
+      font-size:15px;
+      font-weight:bold;
+  }
+  /* 大枠の指定 */
+  
+  div.row_1 {
+    height: 30mm;
+    width:100%;
+  }
+  div.row_1 div.col_1{
+    float:left;
+  }
+  div.row_1 div.col_2{
+    float:right;
+  }
+  div.row_2 {
+    height: 25mm;
+    width:100%;
+    padding-top:10px;
+  }
+  div.row_2 div.col_3 {
+    width: 80mm;
+    float: left;
+  }
+  div.row_2 div.col_4 {
+    float: left;
+    width:90mm;
+  }
+  div.row_3 {
+    width:100%;
+  }
+  
+  /* 個別のスタイル指定 */
+
+  /* タイトル */
+  h1 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 26px;
+  }
+  
+  /* 発行番号・型番・製品・名称・作成日・発生数・品数・内容 */
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+    /* 課長欄等 */
+  h3 {
+        font-size: 15px;
+        font-weight:normal;
+  }
+
+
+  /* テーブル共通 */
+  table,
+  th,
+  td {
+    border: 1px black solid;
+    border-collapse: collapse;
+  }
+  
+  table th {
+    font-weight: normal;
+    color: black;
+  }
+  table td {
+    text-align: center;
+  }
+  
+  .inkan th{
+    width:19mm;
+    text-align:center;
+  }
+  .inkan td{
+    height:18mm;
+    text-align:center;
+  }
+  .list-date{
+    font-weight:bold;
+    font-size:20px;
+  }
+
+  .space{
+    letter-spacing: 3px;
+    padding-top:15px;
+  }
+  .detail{
+    height:190mm;
+    width:100%;
+  }
+  .vertical{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    letter-spacing: 50px;
+    font-size:18px;
+    padding:10px 0 150px 0;
+    font-weight:bold;
+    height:500px;
+  }
+  .table-left{
+      width:calc(100%/10);
+  }
+  .table-title1{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing: 40px;
+    padding:0 0 0 30px;
+    height:4%;
+    width:calc(100%/10*4);
+  }
+  .table-title2{
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing: 40px;
+    padding:0 0 0 30px;
+    width:calc(100%/9*5);
+  }
+  .table-text{
+    height:13%;
+  }
+  .table-title3{
+    font-size:14px;
+    font-weight:bold;
+    height:4%;
+    width:calc(100%/10*2.2)
+  }
+  .table-bottom{
+    height:70%;
+    font-weight:bold;
+    text-align:left;
+    vertical-align:top;
+    padding-left:2px;
+  }
+  .text-area{
+      vertical-align:top;
+  }
+  .text-area li{
+      float:left;
+      padding:0 40px 0 30px;
+      font-size:14px;
+  }
